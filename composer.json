@@ -1,0 +1,41 @@
+{
+    "name": "symfony-flex-demo/framework",
+    "type": "project",
+    "license": "MIT",
+    "description": "A minimal Symfony Framework Flex project",
+    "require": {
+        "sonata-project/doctrine-orm-admin-bundle": "^3",
+        "symfony/flex": "^1.0",
+        "symfony/yaml": "^3.4 || ^4.0"
+    },
+    "require-dev": {
+        "symfony/dotenv": "^3.4 || ^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "scripts": {
+        "initialize": [
+            ""
+        ],
+        "security:check": [
+            "security-checker security:check"
+        ],
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": true
+        }
+    }
+}
