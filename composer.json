@@ -18,7 +18,11 @@
     },
     "scripts": {
         "initialize": [
-            ""
+            "console doctrine:database:create",
+            "console doctrine:migrations:diff --quiet",
+            "console doctrine:migrations:migrate --no-interaction --quiet",
+            "console make:crud Author",
+            "console make:crud BlogPost"
         ],
         "security:check": [
             "security-checker security:check"
