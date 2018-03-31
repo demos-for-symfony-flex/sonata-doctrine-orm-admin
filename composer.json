@@ -4,20 +4,14 @@
     "license": "MIT",
     "description": "A minimal Symfony Framework Flex project",
     "require": {
-        "sensio/framework-extra-bundle": "^5.1",
         "sonata-project/doctrine-orm-admin-bundle": "^3",
         "symfony/console": "^3.4 || ^4.0",
         "symfony/flex": "^1.0",
-        "symfony/form": "^3.4 || ^4.0",
         "symfony/orm-pack": "^1.0",
-        "symfony/security-csrf": "^3.4 || ^4.0",
-        "symfony/twig-bundle": "^3.4 || ^4.0",
-        "symfony/validator": "^3.4 || ^4.0",
         "symfony/yaml": "^3.4 || ^4.0"
     },
     "require-dev": {
         "symfony/dotenv": "^3.4 || ^4.0",
-        "symfony/maker-bundle": "^1.0",
         "symfony/profiler-pack": "^1.0",
         "symfony/web-server-bundle": "^3.4 || ^4.0"
     },
@@ -37,9 +31,7 @@
         "initialize": [
             "console doctrine:database:create",
             "console doctrine:migrations:diff --quiet",
-            "console doctrine:migrations:migrate --no-interaction --quiet",
-            "console make:crud Author",
-            "console make:crud BlogPost"
+            "console doctrine:migrations:migrate --no-interaction --quiet"
         ],
         "security:check": [
             "security-checker security:check"
