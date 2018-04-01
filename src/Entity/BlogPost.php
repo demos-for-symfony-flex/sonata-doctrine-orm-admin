@@ -23,6 +23,13 @@ class BlogPost
     public $id;
 
     /**
+     * @var bool
+     *
+     * @ORM\Column(name="draft", type="boolean")
+     */
+    private $draft = false; // Required by Sonata
+
+    /**
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
