@@ -37,7 +37,8 @@ before_install:
   fi
 
 install:
-- composer install
+- php -r "echo ini_get('memory_limit').PHP_EOL;"
+- COMPOSER_MEMORY_LIMIT=-1 composer install
 
 script:
 - php -S 127.0.0.1:8000 -t public &>/dev/null & printf 'HEAD /admin/dashboard HTTP/1.1\r\n\r\n' | socat - TCP4:localhost:8000,forever >/dev/null # Waiting for server to connect.
